@@ -19,7 +19,7 @@ $db = $database->getConnection();
 // initialize object
 $product = new Product($db);
 // read products will be here
-$sql="SELECT `*` FROM `product` WHERE `*`= '$Product' ";
+$sql=" SELECT `*` FROM `product` WHERE `*`= '$Product' ";
 // query products
 $result = $product->update();
 

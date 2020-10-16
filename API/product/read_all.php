@@ -8,7 +8,6 @@ include_once '../config/database.php';
 include_once '../objects/product.php';
 // instantiate database and product object
 
-$id = null;
 
 $database = new Database();
 $db = $database->getConnection();
@@ -24,11 +23,12 @@ if($num>0){
    $products_arr=array();
    // product data ophalen
    while ($row = $result->fetch_assoc()){
+       extract($row);
        $product_item=array(
-           "id" => $row['id'],
-           "naam" => $row['naam'],
-           "beschrijving" => html_entity_decode($row['beschrijving']),
-           "prijs" => $row['prijs']
+           "id" => $id,
+           "naam" => $naam,
+           "beschrijving" => $beschrijving,
+           "prijs" => $prijs
        );
        array_push($products_arr, $product_item);
    }

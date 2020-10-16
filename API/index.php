@@ -11,6 +11,8 @@
             .then(response => response.json())
             .then(data => {
                 for(let i=0; i<data.length; i++) {
+                    console.log(i);
+                    console.log(data.length);
                     let div = document.createElement('div');
                     let textnode = document.createTextNode(naam);
                     div.appendChild(textnode);

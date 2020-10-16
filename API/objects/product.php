@@ -13,7 +13,6 @@ class Product
    }
    // read products
    function read($id)
-
    {
     if($id == '')
     {
@@ -21,10 +20,10 @@ class Product
         $where = '';
     }else{
         //read_one
-        $where = "WHERE id = " . $id;
+        $where = " WHERE id = " . $id;
     }
     // select query
-    $query = "SELECT * FROM" . $this->table_name . $where;
+    $query = " SELECT * FROM " . $this->table_name . $where;
     $result = $this->conn->query($query);
     return $result;
 }
